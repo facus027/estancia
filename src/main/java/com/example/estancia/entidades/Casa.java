@@ -11,11 +11,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.lang.Nullable;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Casa {
     
     @Id
@@ -43,9 +48,12 @@ public class Casa {
     
    @OneToOne
    private Familia familia;
+   
    @OneToOne
+   @Nullable
    private Estancia estancia;
    @OneToOne
+   @Nullable
    private Comentario comentario;
     
     

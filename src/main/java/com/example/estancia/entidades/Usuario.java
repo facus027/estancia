@@ -10,11 +10,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.lang.Nullable;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Usuario {
     
     @Id
@@ -28,7 +33,9 @@ public class Usuario {
    
    @Temporal(TemporalType.DATE) 
    private Date fechaAlta;
+   
    @Temporal(TemporalType.DATE) 
+   @Nullable
     private Date fechaBaja;
    
    @Enumerated(EnumType.STRING)
